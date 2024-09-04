@@ -1,0 +1,92 @@
+@media (max-width: 1277px) {
+    html{
+        font-size: 9px;
+    } 
+}
+
+@media (max-width: 1262px) {
+    html{
+        font-size: 8px;
+    } 
+
+    main #title {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 1068px) {
+    html{
+        font-size: 6px;
+    } 
+
+    main #title {
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 816px) {
+    html{
+        font-size: 4px;
+    }
+
+    .product-item {
+        width: calc(50% - 30px);
+        flex: 0 0 auto;
+        margin: 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    main #title {
+        font-size: 10rem;
+    }
+
+    .product-item figure figcaption {
+        margin: 17px 0;
+    }
+
+    .product-item .btn-carrito {
+        font-size: 3.2rem;
+    }
+
+    .product-item .fas {
+        font-size: 3.8rem;
+    }
+
+    .product-item figure figcaption h2 {
+        font-size: 2.5rem;
+    }
+
+    .product-item figure figcaption p {
+        font-size: 4rem;
+    }
+
+    .product-item .precio {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 619px) {
+    html{
+        font-size: 3px;
+    } 
+    .product-item figure figcaption {
+        margin: 21px 0;
+        padding-left: 1rem;
+    }
+    .product-item {
+        width: 80%;
+        flex: 0 0 auto;
+        margin: 15px auto;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+@media (max-width: 470px) {
+    html{
+        font-size: 2px;
+    } 
+    .product-item figure figcaption {
+        margin: 23px 0;
+        padding-left: 1rem;
+    }
+}
