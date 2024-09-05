@@ -4,116 +4,130 @@ import { Product } from "./product.js";
 const carrito = new Cart();
 
 let products = [
-    new Product(
-      "Waffle",
-      "Waffle with Berries",
-      6.5,
-      "../assets/images/image-waffle-desktop.jpg"
-    ),
-    new Product(
-      "Vanilla Bean Crème Brûlée",
-      "Crème Brûlée",
-      7.0,
-      "../assets/images/image-creme-brulee-desktop.jpg"
-    ),
-    new Product(
-      "Macaron",
-      "Macaron Mix of Five",
-      8.0,
-      "../assets/images/image-macaron-desktop.jpg"
-    ),
-    new Product(
-      "Tiramisu",
-      "Classic Tiramisu",
-      5.5,
-      "../assets/images/image-tiramisu-desktop.jpg"
-    ),
-    new Product(
-      "Baklava",
-      "Pistachio Baklava",
-      4.0,
-      "../assets/images/image-baklava-desktop.jpg"
-    ),
-    new Product(
-      "Pie",
-      "Lemon Meringue Pie",
-      5.0,
-      "../assets/images/image-meringue-desktop.jpg"
-    ),
-    new Product(
-      "Cake",
-      "Red Velvet Cake",
-      4.5,
-      "../assets/images/image-cake-desktop.jpg"
-    ),
-    new Product(
-      "Brownie",
-      "Salted Caramel Brownie",
-      4.5,
-      "../assets/images/image-brownie-desktop.jpg"
-    ),
-    new Product(
-      "Panna Cotta",
-      "Vanilla Panna Cotta",
-      6.5,
-      "../assets/images/image-panna-cotta-desktop.jpg"
-    ),
-  ];
-
+  new Product(
+    "Waffle",
+    "Waffle with Berries",
+    6.5,
+    "../assets/images/image-waffle-desktop.jpg"
+  ),
+  new Product(
+    "Vanilla Bean Crème Brûlée",
+    "Crème Brûlée",
+    7.0,
+    "../assets/images/image-creme-brulee-desktop.jpg"
+  ),
+  new Product(
+    "Macaron",
+    "Macaron Mix of Five",
+    8.0,
+    "../assets/images/image-macaron-desktop.jpg"
+  ),
+  new Product(
+    "Tiramisu",
+    "Classic Tiramisu",
+    5.5,
+    "../assets/images/image-tiramisu-desktop.jpg"
+  ),
+  new Product(
+    "Baklava",
+    "Pistachio Baklava",
+    4.0,
+    "../assets/images/image-baklava-desktop.jpg"
+  ),
+  new Product(
+    "Pie",
+    "Lemon Meringue Pie",
+    5.0,
+    "../assets/images/image-meringue-desktop.jpg"
+  ),
+  new Product(
+    "Cake",
+    "Red Velvet Cake",
+    4.5,
+    "../assets/images/image-cake-desktop.jpg"
+  ),
+  new Product(
+    "Brownie",
+    "Salted Caramel Brownie",
+    4.5,
+    "../assets/images/image-brownie-desktop.jpg"
+  ),
+  new Product(
+    "Panna Cotta",
+    "Vanilla Panna Cotta",
+    6.5,
+    "../assets/images/image-panna-cotta-desktop.jpg"
+  ),
+];
 const productList = document.querySelector("#product-list");
 const carritoContent = document.querySelector("#carrito");
 const contadorCarrito = document.createElement("h2");
 contadorCarrito.className = "contador-carrito";
 contadorCarrito.textContent = `Tu carrito (0)`;
-const figureCarrito = document.createElement("figure");
-const figcaptionCarrito = document.createElement("figcaption");
+carritoContent.append(contadorCarrito);
 
-const sectionCarrito = document.createElement('section');
-sectionCarrito.className = 'sectionCarrito';
-const sectionDetails = document.createElement('div');
-sectionDetails.className = 'sectionDetails';
-const detailsNombre = document.createElement('p');
-const detailsDiv = document.createElement('div');
-detailsDiv.className = 'detailsDiv';
-const spanCantidad = document.createElement('span');
-spanCantidad.className = 'spanCantidad';
-const spanPrecioUnitario = document.createElement('span');
-spanPrecioUnitario.className = 'spanPrecios';
-const spanPrecioTotal = document.createElement('span');
-spanPrecioTotal.className = 'spanPrecioTotal';
-const sectionCancelar = document.createElement('div');
-sectionCancelar.className = 'sectionCancelar';
-const CancelarButton = document.createElement('button');
-const circleXmark = document.createElement('i');
-circleXmark.className = 'fa-regular fa-circle-xmark';
-
-
-// Si carrito esta vacio
 if (carrito.products.length === 0) {
+  const figureCarrito = document.createElement("figure");
   figureCarrito.className = "carrito-vacio";
+  const figcaptionCarrito = document.createElement("figcaption");
   figcaptionCarrito.className = "figure-caption";
   const imgCarrito = document.createElement("img");
   imgCarrito.src = "assets/images/illustration-empty-cart.svg";
   imgCarrito.alt = "carrito vacio";
   const parrafoCarrito = document.createElement("p");
-  parrafoCarrito.textContent = "Tus productos añadidos apareceran aqui";
+  parrafoCarrito.textContent = "Tus productos añadidos aparecerán aquí";
 
   figcaptionCarrito.append(parrafoCarrito);
   figureCarrito.append(imgCarrito, figcaptionCarrito);
+  carritoContent.append(figureCarrito);
 } else {
-    contadorCarrito.textContent = `Tu carrito (${JSON.parse(localStorage.getItem('products')).length})`;
-    carrito.products.forEach(product => {
-        console.log(product);
-        detailsNombre.textContent = `${product[0].description}`;
-        spanCantidad.textContent = `x${product[1]}`;
-        spanPrecioUnitario.textContent = `@ $${product[0].price}`;
-        spanPrecioTotal.textContent = `${product[1]*product[0].price}`;
-        CancelarButton.
-    });
-    detailsDiv.append(spanCantidad, spanPrecioUnitario, spanPrecioTotal);
-    sectionCarrito.append(detailsNombre,detailsDiv);
+  contadorCarrito.textContent = `Tu carrito (${carrito.products.length})`;
+  carrito.products.forEach((product) => {
+    const sectionCarrito = document.createElement("section");
+    sectionCarrito.className = "sectionCarrito";
+
+    const sectionDetails = document.createElement("div");
+    sectionDetails.className = "sectionDetails";
+
+    const detailsNombre = document.createElement("p");
+    detailsNombre.textContent = `${product[0].description}`;
+
+    const infoDiv = document.createElement("div");
+    infoDiv.className = "infoDiv";
+
+    const spanCantidad = document.createElement("span");
+    spanCantidad.className = "spanCantidad";
+    spanCantidad.textContent = `x${product[1]}`;
+
+    const spanPrecioUnitario = document.createElement("span");
+    spanPrecioUnitario.className = "spanPrecios";
+    spanPrecioUnitario.textContent = `@ $${product[0].price.toFixed(2)}`;
+
+    const spanPrecioTotal = document.createElement("span");
+    spanPrecioTotal.className = "spanPrecioTotal";
+    spanPrecioTotal.textContent = `$${(product[1] * product[0].price).toFixed(2)}`;
+
+    const sectionCancelar = document.createElement("div");
+    sectionCancelar.className = "sectionCancelar";
+
+    // Aquí integramos el SVG con la etiqueta <object>
+    const CancelarButton = document.createElement("button");
+    const svgIcon = document.createElement("object");
+    svgIcon.setAttribute("type", "image/svg+xml");
+    svgIcon.setAttribute("data", "assets/images/icon-remove-item.svg");
+    svgIcon.className = "svg-icon";
+    CancelarButton.append(svgIcon);
+
+    infoDiv.append(spanCantidad, spanPrecioUnitario, spanPrecioTotal);
+    sectionDetails.append(detailsNombre, infoDiv);
+    sectionCancelar.append(CancelarButton);
+    sectionCarrito.append(sectionDetails, sectionCancelar);
+
+    carritoContent.append(sectionCarrito);
+  });
+
 }
-carritoContent.append(contadorCarrito, figureCarrito,sectionCarrito);
+
 
 
 products.forEach((product) => {
@@ -153,6 +167,7 @@ products.forEach((product) => {
     carrito.addProductCart(product);
     const totalProductos = carrito.products.length;
     contadorCarrito.textContent = `tu carrito(${totalProductos})`;
+    actualizarCarrito(product);
   });
 
   // Estructurar los elementos creados

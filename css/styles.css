@@ -43,30 +43,29 @@ main #title {
   flex-wrap: wrap;
 }
 
-.product-article{
+.product-article {
   width: calc(33% - 30px);
   flex: 0 0 auto;
   margin: 15px;
   border-radius: 10px 10px 0 0;
 }
 
-.article-figure{
+.article-figure {
   width: 100%;
 }
 
-.figure-img{
+.figure-img {
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.figure-figcaption{
+.figure-figcaption {
   margin: 10px 0;
   padding-left: 1rem;
 }
 
-
-.figcaption-button{
+.figcaption-button {
   position: relative;
   display: flex;
   align-items: center;
@@ -84,27 +83,27 @@ main #title {
   transition: all 300ms linear;
 }
 
-.figcaption-button:hover{
+.figcaption-button:hover {
   background: orange;
   color: white;
 }
 
-.figcaption-name{
+.figcaption-name {
   color: #a0a0a0;
   font-size: 1.5rem;
 }
 
-.figcaption-description{
+.figcaption-description {
   font-size: 2rem;
   font-weight: 700;
 }
 
-.figcaption-price{
+.figcaption-price {
   font-size: 1.5rem;
   font-weight: 400;
 }
 
-.fa-shopping-cart{
+.fa-shopping-cart {
   margin-right: 1rem;
   font-size: 2rem;
 }
@@ -126,7 +125,7 @@ aside {
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: 900;
-  color: #C83B0E;
+  color: #c83b0e;
 }
 
 .carrito-vacio {
@@ -136,43 +135,61 @@ aside {
   padding-top: 20px;
 }
 
-#carrito img{
-    height: 12rem;
-    width: 13rem;
-    object-fit: cover;
+#carrito img {
+  height: 12rem;
+  width: 13rem;
+  object-fit: cover;
 }
 
-#carrito p{
-    color: #888888
+#carrito p {
+  color: #888888;
 }
 
-.detailsDiv{
+.detailsDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionCarrito {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoDiv {
   display: flex;
   gap: 10px;
-
 }
 
-.sectionCarrito{
-  font-size: 1.2rem;
-}
-
-.sectionCarrito p{
+.sectionCarrito p {
   color: black !important;
   margin-bottom: 5px;
   font-weight: 700;
   margin-top: 15px;
 }
 
-.spanCantidad{
-  color: #C83B0E;
+.sectionCancelar{
+  cursor: pointer;
+}
+
+.sectionCancelar button {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.spanCantidad {
+  color: #c83b0e;
   font-weight: 600;
 }
 
-.spanPrecios{
+.spanPrecios {
   color: #a0a0a0;
 }
 
-.spanPrecioTotal{
+.spanPrecioTotal {
   font-weight: 600;
 }
 
@@ -181,20 +198,6 @@ footer {
   width: 100%;
   background: rgba(98, 55, 143, 0.5);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 
 
