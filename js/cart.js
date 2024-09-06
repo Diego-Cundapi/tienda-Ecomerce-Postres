@@ -1,7 +1,6 @@
 export class Cart {
   constructor() {
     this.products = JSON.parse(localStorage.getItem('products')) || [];
-    this.actualizarContador();
   }
 
   addProductCart(product) {
@@ -15,7 +14,4 @@ export class Cart {
     localStorage.setItem('products', JSON.stringify(this.products));
   }
 
-  actualizarContador(){
-    return this.products.length;
-  }
 }

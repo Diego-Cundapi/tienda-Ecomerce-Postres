@@ -1,5 +1,6 @@
 import { Cart } from "./cart.js";
 import { Product } from "./product.js";
+import { actualizarCarrito } from "./_actualizarCarrito.js";
 
 const carrito = new Cart();
 
@@ -81,54 +82,8 @@ if (carrito.products.length === 0) {
   figureCarrito.append(imgCarrito, figcaptionCarrito);
   carritoContent.append(figureCarrito);
 } else {
-  contadorCarrito.textContent = `Tu carrito (${carrito.products.length})`;
-  carrito.products.forEach((product) => {
-    const sectionCarrito = document.createElement("section");
-    sectionCarrito.className = "sectionCarrito";
-
-    const sectionDetails = document.createElement("div");
-    sectionDetails.className = "sectionDetails";
-
-    const detailsNombre = document.createElement("p");
-    detailsNombre.textContent = `${product[0].description}`;
-
-    const infoDiv = document.createElement("div");
-    infoDiv.className = "infoDiv";
-
-    const spanCantidad = document.createElement("span");
-    spanCantidad.className = "spanCantidad";
-    spanCantidad.textContent = `x${product[1]}`;
-
-    const spanPrecioUnitario = document.createElement("span");
-    spanPrecioUnitario.className = "spanPrecios";
-    spanPrecioUnitario.textContent = `@ $${product[0].price.toFixed(2)}`;
-
-    const spanPrecioTotal = document.createElement("span");
-    spanPrecioTotal.className = "spanPrecioTotal";
-    spanPrecioTotal.textContent = `$${(product[1] * product[0].price).toFixed(2)}`;
-
-    const sectionCancelar = document.createElement("div");
-    sectionCancelar.className = "sectionCancelar";
-
-    // Aquí integramos el SVG con la etiqueta <object>
-    const CancelarButton = document.createElement("button");
-    const svgIcon = document.createElement("object");
-    svgIcon.setAttribute("type", "image/svg+xml");
-    svgIcon.setAttribute("data", "assets/images/icon-remove-item.svg");
-    svgIcon.className = "svg-icon";
-    CancelarButton.append(svgIcon);
-
-    infoDiv.append(spanCantidad, spanPrecioUnitario, spanPrecioTotal);
-    sectionDetails.append(detailsNombre, infoDiv);
-    sectionCancelar.append(CancelarButton);
-    sectionCarrito.append(sectionDetails, sectionCancelar);
-
-    carritoContent.append(sectionCarrito);
-  });
-
+  actualizarCarrito(carrito, carritoContent, contadorCarrito);
 }
-
-
 
 products.forEach((product) => {
   // Crear los elementos para cada producto
@@ -163,11 +118,12 @@ products.forEach((product) => {
   price.textContent = `$${product.price.toFixed(2)}`;
 
   // Nodos del aside
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
     carrito.addProductCart(product);
     const totalProductos = carrito.products.length;
     contadorCarrito.textContent = `tu carrito(${totalProductos})`;
-    actualizarCarrito(product);
+    actualizarCarrito(carrito, carritoContent, contadorCarrito);
   });
 
   // Estructurar los elementos creados
