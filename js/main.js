@@ -68,6 +68,16 @@ contadorCarrito.className = "contador-carrito";
 contadorCarrito.textContent = `Tu carrito (0)`;
 carritoContent.append(contadorCarrito);
 
+function updateCartUI() {
+  actualizarCarrito(carrito, carritoContent, contadorCarrito);
+}
+
+// Agregar el listener al carrito
+carrito.addListener(updateCartUI);
+
+// Inicializar la UI del carrito
+updateCartUI();
+
 if (carrito.products.length === 0) {
   const figureCarrito = document.createElement("figure");
   figureCarrito.className = "carrito-vacio";

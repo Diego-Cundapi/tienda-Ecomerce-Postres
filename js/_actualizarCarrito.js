@@ -88,8 +88,8 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
     // Añadir el SVG al botón
     CancelarButton.append(svgIcon);
 
-    CancelarButton.addEventListener('click', (event) =>{
-      carrito2.deleteProductCart(product);
+    CancelarButton.addEventListener('click', () => {
+      carrito.deleteProductCart(product);
     });
 
     infoDiv.append(spanCantidad, spanPrecioUnitario, spanPrecioTotal);
