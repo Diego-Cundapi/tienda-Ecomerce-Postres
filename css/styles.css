@@ -114,11 +114,14 @@ aside {
   padding: 5rem;
   height: fit-content;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 #carrito {
   background: white;
   padding: 3rem;
+  position: fixed;
+  width: 23%;
 }
 
 #carrito h2 {
@@ -155,6 +158,7 @@ aside {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px auto;
 }
 
 .infoDiv {
@@ -164,9 +168,7 @@ aside {
 
 .sectionCarrito p {
   color: black !important;
-  margin-bottom: 5px;
   font-weight: 700;
-  margin-top: 15px;
 }
 
 .sectionCancelar{
@@ -174,7 +176,8 @@ aside {
 }
 
 .sectionCancelar button {
-  border-radius: 50%;
+  background-color: transparent;
+  border: none;
   width: 20px;
   height: 20px;
   cursor: pointer;

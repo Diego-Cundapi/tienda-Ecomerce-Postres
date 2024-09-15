@@ -14,4 +14,18 @@ export class Cart {
     localStorage.setItem('products', JSON.stringify(this.products));
   }
 
+  deleteProductCart(product){
+    // console.log(this.products);
+    // console.log(this.products.filter( item => item[0].name === product[0].name));
+    // console.log(this.products);
+    // console.log(this.products.filter( item => item[0].name !== product[0].name)
+    //                           .map(value => value));
+    
+    /* buscamos todos los productos excepto los que la propiedad name coincida con el producto a eliminar
+    posteriormente esos productos los regresamos mediante el map a la variable listaActualizada
+    */
+    this.products = this.products.filter( item => item[0].name !== product[0].name)
+                                        .map(value => value);
+    localStorage.setItem('products', JSON.stringify(this.products));
+  }
 }

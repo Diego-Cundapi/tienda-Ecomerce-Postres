@@ -1,26 +1,12 @@
-@media (max-width: 1277px) {
-    html{
-        font-size: 9px;
-    } 
-}
-
-@media (max-width: 1262px) {
-    html{
-        font-size: 8px;
-    } 
-
-    main #title {
-        font-size: 5rem;
+@media (max-width: 1109px) {
+    .figcaption-button{
+        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 1068px) {
-    html{
-        font-size: 6px;
-    } 
-
-    main #title {
-        font-size: 7rem;
+@media (max-width: 1000px) {
+    .figcaption-button{
+        font-size: 0.7rem;
     }
 }
 
@@ -29,7 +15,7 @@
         font-size: 4px;
     }
 
-    .product-item {
+    .product-article {
         width: calc(50% - 30px);
         flex: 0 0 auto;
         margin: 15px;
@@ -40,27 +26,43 @@
         font-size: 10rem;
     }
 
-    .product-item figure figcaption {
+    .article-figure figcaption {@media (max-width: 816px) {
+    html{
+        font-size: 4px;
+    }
+
+    .product-article {
+        width: calc(50% - 30px);
+        flex: 0 0 auto;
+        margin: 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    main #title {
+        font-size: 10rem;
+    }
+
+    .article-figure figcaption {
         margin: 17px 0;
     }
 
-    .product-item .btn-carrito {
+    .figcaption-button {
         font-size: 3.2rem;
     }
 
-    .product-item .fas {
+    .fas {
         font-size: 3.8rem;
     }
 
-    .product-item figure figcaption h2 {
+    .figcaption-description {
         font-size: 2.5rem;
     }
 
-    .product-item figure figcaption p {
+    .figcaption-price {
         font-size: 4rem;
     }
 
-    .product-item .precio {
+    .figcaption-name {
         font-size: 3.2rem;
     }
 }
@@ -69,11 +71,12 @@
     html{
         font-size: 3px;
     } 
-    .product-item figure figcaption {
+    .article-figure figcaption {
         margin: 21px 0;
         padding-left: 1rem;
     }
-    .product-item {
+
+    .product-article {
         width: 80%;
         flex: 0 0 auto;
         margin: 15px auto;
@@ -85,7 +88,58 @@
     html{
         font-size: 2px;
     } 
-    .product-item figure figcaption {
+    .article-figure figcaption {
+        margin: 23px 0;
+        padding-left: 1rem;
+    }
+}
+
+        margin: 17px 0;
+    }
+
+    .figcaption-button {
+        font-size: 3.2rem;
+    }
+
+    .fas {
+        font-size: 3.8rem;
+    }
+
+    .figcaption-description {
+        font-size: 2.5rem;
+    }
+
+    .figcaption-price {
+        font-size: 4rem;
+    }
+
+    .figcaption-name {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 619px) {
+    html{
+        font-size: 3px;
+    } 
+    .article-figure figcaption {
+        margin: 21px 0;
+        padding-left: 1rem;
+    }
+
+    .product-article {
+        width: 80%;
+        flex: 0 0 auto;
+        margin: 15px auto;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+@media (max-width: 470px) {
+    html{
+        font-size: 2px;
+    } 
+    .article-figure figcaption {
         margin: 23px 0;
         padding-left: 1rem;
     }

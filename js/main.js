@@ -60,6 +60,7 @@ let products = [
     "../assets/images/image-panna-cotta-desktop.jpg"
   ),
 ];
+
 const productList = document.querySelector("#product-list");
 const carritoContent = document.querySelector("#carrito");
 const contadorCarrito = document.createElement("h2");
