@@ -22,7 +22,9 @@ function crearElementoProducto(product) {
 
   const spanPrecioTotal = document.createElement("span");
   spanPrecioTotal.className = "spanPrecioTotal";
-  spanPrecioTotal.textContent = `$${(product[1] * product[0].price).toFixed(2)}`;
+  spanPrecioTotal.textContent = `$${(product[1] * product[0].price).toFixed(
+    2
+  )}`;
 
   infoDiv.append(spanCantidad, spanPrecioUnitario, spanPrecioTotal);
   sectionDetails.append(detailsNombre, infoDiv);
@@ -39,7 +41,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
   }
 
   // Actualizar el contador del carrito
-  const totalItems = carrito.products.reduce((sum, product) => sum + product[1], 0);
+  const totalItems = carrito.products.reduce(
+    (sum, product) => sum + product[1],
+    0
+  );
   contadorCarrito.textContent = `Tu carrito (${totalItems})`;
   carritoContent.append(contadorCarrito);
 
@@ -73,7 +78,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       const CancelarButton = document.createElement("button");
 
       // Crear SVG de forma segura
-      const svgIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const svgIcon = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg"
+      );
       svgIcon.setAttribute("fill", "none");
       svgIcon.setAttribute("stroke", "currentColor");
       svgIcon.setAttribute("viewBox", "0 0 20 20");
@@ -81,7 +89,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       svgIcon.setAttribute("aria-hidden", "true");
       svgIcon.classList.add("svg-icon");
 
-      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      const circle = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle"
+      );
       circle.setAttribute("cx", "10");
       circle.setAttribute("cy", "10");
       circle.setAttribute("r", "8");
@@ -89,16 +100,24 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       circle.setAttribute("fill", "transparent");
       circle.setAttribute("stroke-width", "2");
 
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      );
       path.setAttribute("clip-rule", "evenodd");
       path.setAttribute("fill-rule", "evenodd");
       path.setAttribute("fill", "currentColor");
-      path.setAttribute("d", "M8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z");
+      path.setAttribute(
+        "d",
+        "M8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z"
+      );
 
       svgIcon.append(circle, path);
       CancelarButton.append(svgIcon);
 
-      CancelarButton.addEventListener("click", () => carrito.deleteProductCart(product));
+      CancelarButton.addEventListener("click", () =>
+        carrito.deleteProductCart(product)
+      );
 
       sectionCancelar.append(CancelarButton);
       sectionCarrito.append(sectionCancelar);
@@ -116,10 +135,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
     containerBotom.textContent = "Confirm Order";
 
     // Evento para abrir el modal con los productos y el total
-    containerBotom.addEventListener("click", function () {
-      const modalSection = document.createElement("section");
-      modalSection.className = "modalSection";
+    const modalSection = document.createElement("section");
+    modalSection.className = "modalSection";
 
+    containerBotom.addEventListener("click", function () {
       const modalContainer = document.createElement("div");
       modalContainer.className = "modalContainer";
 
@@ -140,13 +159,13 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       divProducts.className = "divProducts";
 
       carrito.products.forEach((product) => {
-        const divContainer = document.createElement('div');
-        divContainer.className = 'producto-container';
+        const divContainer = document.createElement("div");
+        divContainer.className = "producto-container";
 
-        const imgProduct = document.createElement('img');
+        const imgProduct = document.createElement("img");
         imgProduct.src = product[0].image;
         imgProduct.alt = product[0].name;
-        imgProduct.className = 'producto-imagen';
+        imgProduct.className = "producto-imagen";
 
         const productoModal = crearElementoProducto(product);
         divContainer.append(imgProduct, productoModal);
@@ -158,13 +177,19 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       divProducts.append(crearTotalContent(carrito));
 
       // Botón para iniciar una nueva orden
-      const btnNewOrder = document.createElement('button');
-      btnNewOrder.className = 'btnNewOrder';
-      btnNewOrder.textContent = 'Start New Order';
-      btnNewOrder.addEventListener('click', function(event){
+      const btnNewOrder = document.createElement("button");
+      btnNewOrder.className = "btnNewOrder";
+      btnNewOrder.textContent = "Start New Order";
+      btnNewOrder.addEventListener("click", function (event) {
         event.preventDefault();
         carrito.clearCart();
-        window.location.href = 'index.html'; // Redirecciona a index.html
+        while(modalSection.firstChild){
+          modalSection.removeChild(modalSection.firstChild);
+        }
+        
+        document.getElementsByClassName('modalSection')[0].remove();
+        // console.log(document.getElementsByClassName('modalSection')[0]);
+        // window.location.href = 'index.html'; // Redirecciona a index.html
       });
 
       // Agregar productos y total en el modal
@@ -175,7 +200,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
         .then((response) => response.text())
         .then((svgText) => {
           const parser = new DOMParser();
-          const svgElement = parser.parseFromString(svgText, "image/svg+xml").documentElement;
+          const svgElement = parser.parseFromString(
+            svgText,
+            "image/svg+xml"
+          ).documentElement;
           modalContainer.prepend(svgElement);
         })
         .catch(console.error);
@@ -198,7 +226,10 @@ function crearTotalContent(carrito) {
 
   const totalPrice = document.createElement("p");
   totalPrice.className = "totalPrice";
-  const total = carrito.products.reduce((sum, product) => sum + product[0].price * product[1], 0);
+  const total = carrito.products.reduce(
+    (sum, product) => sum + product[0].price * product[1],
+    0
+  );
   totalPrice.textContent = `$${total.toFixed(2)}`;
 
   totalContent.append(totalText, totalPrice);
