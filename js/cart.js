@@ -32,4 +32,10 @@ export class Cart {
   saveToLocalStorage() {
     localStorage.setItem('products', JSON.stringify(this.products));
   }
+  
+  clearCart() {
+    this.products = []; // Vaciar el array de productos
+    localStorage.removeItem('products'); // Eliminar los productos del localStorage
+    this.notifyListeners(); // Notificar a los listeners sobre el cambio
+  }
 }

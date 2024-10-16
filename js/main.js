@@ -78,23 +78,7 @@ carrito.addListener(updateCartUI);
 // Inicializar la UI del carrito
 updateCartUI();
 
-if (carrito.products.length === 0) {
-  const figureCarrito = document.createElement("figure");
-  figureCarrito.className = "carrito-vacio";
-  const figcaptionCarrito = document.createElement("figcaption");
-  figcaptionCarrito.className = "figure-caption";
-  const imgCarrito = document.createElement("img");
-  imgCarrito.src = "assets/images/illustration-empty-cart.svg";
-  imgCarrito.alt = "carrito vacio";
-  const parrafoCarrito = document.createElement("p");
-  parrafoCarrito.textContent = "Tus productos añadidos aparecerán aquí";
-
-  figcaptionCarrito.append(parrafoCarrito);
-  figureCarrito.append(imgCarrito, figcaptionCarrito);
-  carritoContent.append(figureCarrito);
-} else {
-  actualizarCarrito(carrito, carritoContent, contadorCarrito);
-}
+actualizarCarrito(carrito, carritoContent, contadorCarrito);
 
 products.forEach((product) => {
   // Crear los elementos para cada producto

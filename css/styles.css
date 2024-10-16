@@ -223,7 +223,7 @@ aside {
   align-items: center;
 }
 
-.message{
+.message {
   color: black;
   font-size: 1rem;
   display: flex;
@@ -231,6 +231,117 @@ aside {
   justify-content: center;
 }
 
+.containerBotom, .btnNewOrder {
+  background-color: #c83b0e;
+  padding: 1.2rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: 300ms ease-in-out all;
+  border-color: transparent;
+}
+
+.containerBotom:hover, .btnNewOrder:hover{
+  background-color: #79260a;
+}
+
+.modalSection {
+  position: fixed;
+  z-index: 1000;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  padding: 3rem 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.modalMessage {
+  margin-top: 2rem;
+}
+
+.modalContainer {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3rem;
+  
+}
+
+.messageTitle {
+  font-size: 4rem;
+}
+
+.messageParrafo {
+  color: #a0a0a0;
+  font-size: 1.5rem;
+}
+
+.divProducts {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #fcf8f5c2;
+  border-radius: 1rem;
+}
+
+.modalSection .sectionDetails {
+  width: 100%;
+  
+}
+
+.modalSection .sectionCarrito {
+  border: none;
+  
+}
+
+.modalSection .infoDiv {
+  justify-content: space-between;
+}
+
+.modalSection .spanPrecioTotal {
+  font-size: 1.5rem;
+  margin-top: -1.4rem;
+  font-weight: bold;
+}
+
+.divProducts .totalPrice{
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+.producto-container {
+  display: flex; /* Alinea los elementos uno al lado del otro */
+  align-items: center; /* Centra verticalmente la imagen y el contenido */
+  margin-bottom: 15px; /* Espacio entre productos */
+  border-bottom: 1px solid #dfdddd;
+  padding-bottom: 1rem;
+}
+
+.producto-imagen {
+  max-height: 6rem;
+  margin-right: 15px; /* Espacio entre la imagen y el producto */
+  border-radius: 8px; /* Bordes redondeados para darle estilo */
+}
+
+.sectionCarrito {
+  flex-grow: 1; /* Hace que el contenido del producto ocupe el espacio restante */
+}
+
+.sectionDetails {
+  display: flex;
+  flex-direction: column; /* Alinea el nombre del producto y los detalles en columna */
+}
 footer {
   height: 3%;
   width: 100%;
