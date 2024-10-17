@@ -66,7 +66,9 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
     figCaption.append(captionText);
     figureCarrito.append(imgCarrito, figCaption);
     carritoContent.append(figureCarrito);
+    
   } else {
+    
     // Mostrar los productos en el carrito
     carrito.products.forEach((product) => {
       const sectionCarrito = crearElementoProducto(product);
@@ -161,14 +163,15 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       carrito.products.forEach((product) => {
         const divContainer = document.createElement("div");
         divContainer.className = "producto-container";
+        modalSection.classList.add("modalShow");
 
         const imgProduct = document.createElement("img");
         imgProduct.src = product[0].image;
         imgProduct.alt = product[0].name;
         imgProduct.className = "producto-imagen";
 
-        if(carrito.products.length >3){
-          divProducts.style.overflowY = 'scroll';
+        if (carrito.products.length > 3) {
+          divProducts.style.overflowY = "scroll";
         }
 
         const productoModal = crearElementoProducto(product);
@@ -187,11 +190,11 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
       btnNewOrder.addEventListener("click", function (event) {
         event.preventDefault();
         carrito.clearCart();
-        while(modalSection.firstChild){
+        while (modalSection.firstChild) {
           modalSection.removeChild(modalSection.firstChild);
         }
-        
-        document.getElementsByClassName('modalSection')[0].remove();
+
+        document.getElementsByClassName("modalSection")[0].remove();
         // console.log(document.getElementsByClassName('modalSection')[0]);
         // window.location.href = 'index.html'; // Redirecciona a index.html
       });
@@ -214,6 +217,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
 
       modalSection.append(modalContainer);
       document.body.append(modalSection);
+
+      // Forzar reflujo para garantizar que se aplique la transición
+      modalContainer.offsetHeight;
+      modalContainer.classList.add("showModal");
     });
 
     carritoContent.append(containerBotom);

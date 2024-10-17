@@ -121,6 +121,9 @@ aside {
   padding: 3rem;
   position: fixed;
   width: 23%;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 #carrito h2 {
@@ -266,7 +269,14 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 3s ease;
 }
+
+.modalShow{
+  opacity: 1;
+}
+
 
 .modalMessage {
   margin-top: 2rem;
@@ -276,6 +286,14 @@ aside {
   background-color: white;
   border-radius: 20px;
   padding: 3rem;
+  opacity: 0;
+  transform: translateY(-90px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.showModal{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .messageTitle {
