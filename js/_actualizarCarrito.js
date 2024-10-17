@@ -167,6 +167,10 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
         imgProduct.alt = product[0].name;
         imgProduct.className = "producto-imagen";
 
+        if(carrito.products.length >3){
+          divProducts.style.overflowY = 'scroll';
+        }
+
         const productoModal = crearElementoProducto(product);
         divContainer.append(imgProduct, productoModal);
 
