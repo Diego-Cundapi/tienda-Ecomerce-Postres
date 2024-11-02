@@ -112,7 +112,7 @@ products.forEach((product) => {
   price.classList.add("figcaption-price");
   price.textContent = `$${product.price.toFixed(2)}`;
 
-  // Nodos del aside
+  // Agregar el evento al botón
   button.addEventListener("click", (event) => {
     event.preventDefault();
     carrito.addProductCart(product);

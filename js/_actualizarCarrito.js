@@ -18,7 +18,7 @@ function crearElementoProducto(product) {
 
   const spanPrecioUnitario = document.createElement("span");
   spanPrecioUnitario.className = "spanPrecios";
-  spanPrecioUnitario.textContent = `@ $${product[0].price.toFixed(2)}`;
+  spanPrecioUnitario.textContent = `@$${product[0].price.toFixed(2)}`;
 
   const spanPrecioTotal = document.createElement("span");
   spanPrecioTotal.className = "spanPrecioTotal";
@@ -134,7 +134,7 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
     // Botón para confirmar la orden
     const containerBotom = document.createElement("button");
     containerBotom.className = "containerBotom";
-    containerBotom.textContent = "Confirm Order";
+    containerBotom.textContent = "Confirmar Orden";
 
     // Evento para abrir el modal con los productos y el total
     const modalSection = document.createElement("section");
@@ -149,11 +149,11 @@ export function actualizarCarrito(carrito, carritoContent, contadorCarrito) {
 
       const title = document.createElement("h1");
       title.className = "messageTitle";
-      title.textContent = "Order Confirmed";
+      title.textContent = "Orden confirmada";
 
       const paragraph = document.createElement("p");
       paragraph.className = "messageParrafo";
-      paragraph.textContent = "We hope you enjoy your food!";
+      paragraph.textContent = "Esperamos Disfrutes Tu Postre!";
 
       modalMessage.append(title, paragraph);
 
@@ -233,7 +233,7 @@ function crearTotalContent(carrito) {
   totalContent.className = "totalContent";
 
   const totalText = document.createElement("p");
-  totalText.textContent = "Order Total";
+  totalText.textContent = "Precio Total";
 
   const totalPrice = document.createElement("p");
   totalPrice.className = "totalPrice";

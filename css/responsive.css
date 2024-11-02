@@ -1,146 +1,121 @@
-@media (max-width: 1109px) {
-    .figcaption-button{
-        font-size: 0.9rem;
-    }
+/* Escritorio grande */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* Añade aquí tus estilos para pantallas grandes */
+  html {
+    font-size: 9px;
+  }
 }
 
-@media (max-width: 1000px) {
-    .figcaption-button{
-        font-size: 0.7rem;
-    }
+/* Escritorio pequeño / tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Añade aquí tus estilos para pantallas pequeñas y tablets */
+  html {
+    font-size: 8px;
+  }
+
+  .wrapper {
+    grid-template-columns: 2.5fr 1fr;
+  }
+  #product-list {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 }
 
-@media (max-width: 816px) {
-    html{
-        font-size: 4px;
-    }
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* Añade aquí tus estilos para tablets y phablets */
 
-    .product-article {
-        width: calc(50% - 30px);
-        flex: 0 0 auto;
-        margin: 15px;
-        border-radius: 10px 10px 0 0;
-    }
+  .wrapper {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: none;
+    grid-template-areas:
+      "main"
+      "aside"
+      "footer";
+  }
 
-    main #title {
-        font-size: 10rem;
-    }
+  main {
+    /* padding: 2rem; */
+    grid-area: main;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 0px;
+  }
 
-    .article-figure figcaption {@media (max-width: 816px) {
-    html{
-        font-size: 4px;
-    }
+  #product-list {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  aside {
+    grid-area: aside;
+    padding: 5rem 0;
+  }
 
-    .product-article {
-        width: calc(50% - 30px);
-        flex: 0 0 auto;
-        margin: 15px;
-        border-radius: 10px 10px 0 0;
-    }
+  #carrito {
+    border-radius: 20px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding-top: 0px;
+    position: relative;
+    width: 80%;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
 
-    main #title {
-        font-size: 10rem;
-    }
-
-    .article-figure figcaption {
-        margin: 17px 0;
-    }
-
-    .figcaption-button {
-        font-size: 3.2rem;
-    }
-
-    .fas {
-        font-size: 3.8rem;
-    }
-
-    .figcaption-description {
-        font-size: 2.5rem;
-    }
-
-    .figcaption-price {
-        font-size: 4rem;
-    }
-
-    .figcaption-name {
-        font-size: 3.2rem;
-    }
+  footer {
+    grid-area: footer;
+  }
 }
 
-@media (max-width: 619px) {
-    html{
-        font-size: 3px;
-    } 
-    .article-figure figcaption {
-        margin: 21px 0;
-        padding-left: 1rem;
-    }
+/* Teléfonos */
+@media only screen and (max-width: 575px) {
+  /* Añade aquí tus estilos para teléfonos */
 
-    .product-article {
-        width: 80%;
-        flex: 0 0 auto;
-        margin: 15px auto;
-        border-radius: 10px 10px 0 0;
-    }
-}
+  .wrapper {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: none;
+    grid-template-areas:
+      "main"
+      "aside"
+      "footer";
+  }
 
-@media (max-width: 470px) {
-    html{
-        font-size: 2px;
-    } 
-    .article-figure figcaption {
-        margin: 23px 0;
-        padding-left: 1rem;
-    }
-}
+  main {
+    /* padding: 2rem; */
+    grid-area: main;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 0px;
+  }
 
-        margin: 17px 0;
-    }
+  #product-list {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  aside {
+    grid-area: aside;
+    padding: 5rem 0;
+  }
 
-    .figcaption-button {
-        font-size: 3.2rem;
-    }
+  #carrito {
+    border-radius: 20px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding-top: 0px;
+    position: relative;
+    width: 80%;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
 
-    .fas {
-        font-size: 3.8rem;
-    }
-
-    .figcaption-description {
-        font-size: 2.5rem;
-    }
-
-    .figcaption-price {
-        font-size: 4rem;
-    }
-
-    .figcaption-name {
-        font-size: 3.2rem;
-    }
-}
-
-@media (max-width: 619px) {
-    html{
-        font-size: 3px;
-    } 
-    .article-figure figcaption {
-        margin: 21px 0;
-        padding-left: 1rem;
-    }
-
-    .product-article {
-        width: 80%;
-        flex: 0 0 auto;
-        margin: 15px auto;
-        border-radius: 10px 10px 0 0;
-    }
-}
-
-@media (max-width: 470px) {
-    html{
-        font-size: 2px;
-    } 
-    .article-figure figcaption {
-        margin: 23px 0;
-        padding-left: 1rem;
-    }
+  footer {
+    grid-area: footer;
+  }
 }
